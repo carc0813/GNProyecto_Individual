@@ -155,4 +155,4 @@ Las historias de usuario y tareas fueron organizadas por prioridad para facilita
 - 🎨 **Diseño en Figma:** [GN Proyecto Individual](https://www.figma.com/design/1P9DkxSDv3NDvIDWLOsFwi/GNproyecto_Individual)
 - 📋 **Gestión del proyecto:** [Trello](https://trello.com/invite/b/6a6ba63d04de471e6edc3522/ATTId85357b2819d251bb842b2f6a8e31d4aA70F83A7/gnproyectoindividual)
 - 💻 **Repositorio:** [GitHub](https://github.com/carc0813/GNProyecto_Individual.git)
-- 🌐 **Demo:** [GitHub Pages](AQUÍ_VA_EL_ENLACE)
+- 🌐 **Demo:** [GitHub Pages](https://carc0813.github.io/GNProyecto_Individual/)
