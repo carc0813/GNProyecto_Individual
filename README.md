@@ -52,6 +52,7 @@ proyecto-tareas/
 - Botones
 - Badges de prioridad
 - Grid responsive de Bootstrap
+-formulario para validar los datos
 
 ---
 
@@ -83,11 +84,16 @@ No es necesario instalar dependencias.
 
 ## 📌 Estado del proyecto
 
-🚧 Sprint 1 - En desarrollo
+🚧 Sprint 1 - finalizado
 
 Actualmente la aplicación contiene únicamente la interfaz gráfica.
-
 Las funcionalidades serán implementadas en los siguientes sprints utilizando JavaScript.
+
+Sprint 2 -- finalizado
+se agregaron las cards de las tareas realizadas hardcodeadas en bootstrap mientras se le implementan las funcionalidades en js 
+
+Sprint 3 -- finalizado
+se le implemento al formulario la  validacion de los datos correspondientes 
 
 ---
 
@@ -146,6 +152,7 @@ Las historias de usuario y tareas fueron organizadas por prioridad para facilita
 
 ## 🔗 Recursos del proyecto
 
-- 🎨 **Figma:** https://www.figma.com/...
-- 📋 **Trello:** https://trello.com/...
-- 💻 **GitHub:** https://github.com/USUARIO/NOMBRE-REPOSITORIO
+- 🎨 **Diseño en Figma:** [GN Proyecto Individual](https://www.figma.com/design/1P9DkxSDv3NDvIDWLOsFwi/GNproyecto_Individual)
+- 📋 **Gestión del proyecto:** [Trello](https://trello.com/invite/b/6a6ba63d04de471e6edc3522/ATTId85357b2819d251bb842b2f6a8e31d4aA70F83A7/gnproyectoindividual)
+- 💻 **Repositorio:** [GitHub](https://github.com/carc0813/GNProyecto_Individual.git)
+- 🌐 **Demo:** [GitHub Pages](AQUÍ_VA_EL_ENLACE)
