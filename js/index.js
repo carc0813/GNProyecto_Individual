@@ -2,8 +2,14 @@ const formulario = document.getElementById("formTarea");
 
 const taskManager = new TaskManager();
 
-console.log(taskManager.tasks);
+// taskManager.addTask(
+//   "Estudiar JavaScript",
+//   "Practicar clases y objetos",
+//   "2026-08-28",
+//   "PORHACER",
+// );
 
+// console.log(taskManager.tasks);
 
 // =====================================
 // FORMULARIO
@@ -11,18 +17,47 @@ console.log(taskManager.tasks);
 
 formulario.addEventListener("submit", function (event) {
 
-    event.preventDefault();
+  event.preventDefault();
 
-    validarFormulario();
+  const formularioValido = validarFormulario();
 
+  if (formularioValido) {
+
+    const name = document
+      .getElementById("nombreTarea")
+      .value
+      .trim();
+
+    const description = document
+      .getElementById("descripcionTarea")
+      .value
+      .trim();
+
+    const dueDate = document
+      .getElementById("fechaTarea")
+      .value;
+
+    const status = document
+      .getElementById("estadoFecha")
+      .value;
+
+    taskManager.addTask(
+      name,
+      description,
+      dueDate,
+      status
+    );
+
+    console.log(taskManager.tasks);
+
+    formulario.reset();
+  }
 });
 
-
 function mostrarMensaje(mensaje, tipo) {
+  const contenedor = document.getElementById("mensaje");
 
-    const contenedor = document.getElementById("mensaje");
-
-    contenedor.innerHTML = `
+  contenedor.innerHTML = `
         <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
 
             ${mensaje}
@@ -38,91 +73,53 @@ function mostrarMensaje(mensaje, tipo) {
     `;
 }
 
-
 function validarFormulario() {
+  const nombre = document.getElementById("nombreTarea").value.trim();
 
-    const nombre = document
-        .getElementById("nombreTarea")
-        .value
-        .trim();
+  const descripcion = document.getElementById("descripcionTarea").value.trim();
 
-    const descripcion = document
-        .getElementById("descripcionTarea")
-        .value
-        .trim();
+  const fecha = document.getElementById("fechaTarea").value;
 
-    const fecha = document
-        .getElementById("fechaTarea")
-        .value;
+  const estado = document.getElementById("estadoFecha").value;
 
-    const estado = document
-        .getElementById("estadoFecha")
-        .value;
+  // Validar nombre
 
+  if (nombre === "") {
+    mostrarMensaje("El nombre de la tarea es obligatorio.", "danger");
 
-    // Validar nombre
+    return false;
+  }
 
-    if (nombre === "") {
+  // Validar descripción
 
-        mostrarMensaje(
-            "El nombre de la tarea es obligatorio.",
-            "danger"
-        );
+  if (descripcion === "") {
+    mostrarMensaje("La descripción es obligatoria.", "danger");
 
-        return false;
-    }
+    return false;
+  }
 
+  // Validar fecha
 
-    // Validar descripción
+  if (fecha === "") {
+    mostrarMensaje("Debe seleccionar una fecha.", "danger");
 
-    if (descripcion === "") {
+    return false;
+  }
 
-        mostrarMensaje(
-            "La descripción es obligatoria.",
-            "danger"
-        );
+  // Validar estado
 
-        return false;
-    }
+  if (estado === "") {
+    mostrarMensaje("Debe seleccionar un estado.", "danger");
 
+    return false;
+  }
 
-    // Validar fecha
+  // Si todo está correcto
 
-    if (fecha === "") {
+  mostrarMensaje("Tarea registrada correctamente.", "success");
 
-        mostrarMensaje(
-            "Debe seleccionar una fecha.",
-            "danger"
-        );
-
-        return false;
-    }
-
-
-    // Validar estado
-
-    if (estado === "") {
-
-        mostrarMensaje(
-            "Debe seleccionar un estado.",
-            "danger"
-        );
-
-        return false;
-    }
-
-
-    // Si todo está correcto
-
-    mostrarMensaje(
-        "Tarea registrada correctamente.",
-        "success"
-    );
-
-    return true;
+  return true;
 }
-
-
 
 // =====================================
 // CAMBIAR ESTADO DE LAS TAREAS
@@ -130,86 +127,60 @@ function validarFormulario() {
 
 const botonesCompletar = document.querySelectorAll(".btn-completar");
 
-
 botonesCompletar.forEach(function (boton) {
+  boton.addEventListener("click", function () {
+    const tarjeta = boton.closest(".tarea-card");
 
-    boton.addEventListener("click", function () {
+    const estado = tarjeta.querySelector(".estado-tarea");
 
-        const tarjeta = boton.closest(".tarea-card");
+    if (estado.textContent.trim() === "Porhacer") {
+      // Cambiar estado
 
-        const estado = tarjeta.querySelector(".estado-tarea");
+      estado.textContent = "Completada";
 
+      // Cambiar color del estado
 
-        if (estado.textContent.trim() === "Pendiente") {
+      estado.classList.remove("bg-warning", "text-dark");
 
-            // Cambiar estado
+      estado.classList.add("bg-success");
 
-            estado.textContent = "Completada";
+      // Cambiar borde de la tarjeta
 
+      tarjeta.classList.add("border-success");
 
-            // Cambiar color del estado
+      // Cambiar texto del botón
 
-            estado.classList.remove(
-                "bg-warning",
-                "text-dark"
-            );
+      boton.textContent = "Marcar porhacer";
 
-            estado.classList.add("bg-success");
+      // Cambiar color del botón
 
+      boton.classList.remove("btn-success");
 
-            // Cambiar borde de la tarjeta
+      boton.classList.add("btn-secondary");
+    } else {
+      // Cambiar estado
 
-            tarjeta.classList.add("border-success");
+      estado.textContent = "porhacer";
 
+      // Cambiar color del estado
 
-            // Cambiar texto del botón
+      estado.classList.remove("bg-success");
 
-            boton.textContent = "Marcar pendiente";
+      estado.classList.add("bg-warning", "text-dark");
 
+      // Quitar borde de la tarjeta
 
-            // Cambiar color del botón
+      tarjeta.classList.remove("border-success");
 
-            boton.classList.remove("btn-success");
+      // Cambiar texto del botón
 
-            boton.classList.add("btn-secondary");
+      boton.textContent = "Completar";
 
+      // Cambiar color del botón
 
-        } else {
+      boton.classList.remove("btn-secondary");
 
-            // Cambiar estado
-
-            estado.textContent = "Pendiente";
-
-
-            // Cambiar color del estado
-
-            estado.classList.remove("bg-success");
-
-            estado.classList.add(
-                "bg-warning",
-                "text-dark"
-            );
-
-
-            // Quitar borde de la tarjeta
-
-            tarjeta.classList.remove("border-success");
-
-
-            // Cambiar texto del botón
-
-            boton.textContent = "Completar";
-
-
-            // Cambiar color del botón
-
-            boton.classList.remove("btn-secondary");
-
-            boton.classList.add("btn-success");
-
-        }
-
-    });
-
+      boton.classList.add("btn-success");
+    }
+  });
 });
-
