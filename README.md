@@ -1,148 +1,158 @@
-# 📋 Administrador de Tareas
 
-## 📖 Descripción
+📋 Administrador de Tareas
 
-Administrador de Tareas es una aplicación web desarrollada como parte del Sprint 1 del proyecto individual. En esta primera versión se implementa la interfaz gráfica utilizando **HTML5** y **Bootstrap 5**, sin funcionalidades en JavaScript.
+📖 Descripción
 
-El objetivo es construir una base sólida para que en los siguientes sprints se puedan incorporar funcionalidades como crear, editar, eliminar y gestionar tareas.
+Aplicación web desarrollada como parte del Proyecto Individual de Generation para gestionar tareas de forma sencilla y organizada.
 
----
+El proyecto comenzó con una interfaz estática en HTML, CSS y Bootstrap y posteriormente incorporó JavaScript para gestionar las tareas dinámicamente.
 
-## 🎯 Objetivos del Sprint 1
+🎯 Objetivo
 
-- Crear la estructura principal de la aplicación.
-- Diseñar un formulario para registrar tareas.
-- Mostrar un espacio destinado para visualizar las tareas.
-- Implementar una interfaz responsive utilizando Bootstrap.
-- Organizar correctamente la estructura del proyecto.
+Desarrollar una aplicación que permita:
 
----
+Crear tareas.
 
-## 🚀 Tecnologías utilizadas
+Visualizar tareas.
 
-- HTML5
-- Bootstrap 5
-- CSS3
-- Git
-- GitHub
+Marcar tareas como completadas.
 
----
+Eliminar tareas.
 
-## 📂 Estructura del proyecto
+Guardar información en el navegador.
 
-```
-proyecto-tareas/
+Aplicar buenas prácticas de JavaScript y organización del proyecto.
+
+🛠️ Tecnologías
+
+HTML5
+
+CSS3
+
+Bootstrap 5
+
+JavaScript
+
+LocalStorage
+
+Git / GitHub
+
+📂 Estructura
+
+GNProyecto_Individual/
 │
-├── index.html
+├── assets/
+│   └── img/
 ├── css/
 │   └── styles.css
 ├── js/
-│   └── script.js
-├── img/
+│   ├── index.js
+│   └── taskManager.js
+├── index.html
 └── README.md
-```
 
----
+🚀 Desarrollo
 
-## 🖥️ Componentes implementados
+🟢 Sprint 1 - Interfaz
 
-- Navbar
-- Formulario para registrar tareas
-- Tarjetas (Cards) para mostrar tareas
-- Botones
-- Badges de prioridad
-- Grid responsive de Bootstrap
--formulario para validar los datos
+Se desarrolló la estructura visual de la aplicación:
 
----
+Barra de navegación.
 
-## 📱 Diseño Responsive
+Formulario de tareas.
 
-La interfaz utiliza el sistema Grid de Bootstrap para adaptarse correctamente a diferentes tamaños de pantalla.
+Campos de nombre, descripción, fecha y estado.
 
----
+Tarjetas de tareas.
 
-## ▶️ Cómo ejecutar el proyecto
+Diseño responsive con Bootstrap.
 
-1. Clonar el repositorio.
+🟡 Sprint 2 - JavaScript y gestión de tareas
 
-```bash
-git clone https://github.com/carc0813/GNProyecto_Individual.git
-```
+Se incorporó JavaScript para gestionar las tareas mediante la clase TaskManager.
 
-2. Entrar al proyecto.
+Tarea 4 - TaskManager
 
-```bash
-cd NOMBRE-DEL-REPOSITORIO
-```
+Se creó la clase TaskManager con el array tasks para almacenar las tareas y se implementó el cambio visual de estado.
 
-3. Abrir el archivo `index.html` en el navegador.
+Tarea 5 - Agregar tareas
 
-No es necesario instalar dependencias.
+Se implementó addTask() para crear tareas como objetos con:
 
----
+{
+    id,
+    name,
+    description,
+    dueDate,
+    status
+}
 
-## 📌 Estado del proyecto
+Las tarjetas ahora se generan dinámicamente mediante:
 
-🚧 Sprint 1 - finalizado
+createTaskHtml()
 
-Actualmente la aplicación contiene únicamente la interfaz gráfica.
-Las funcionalidades serán implementadas en los siguientes sprints utilizando JavaScript.
+render()
 
-Sprint 2 -- finalizado
-se agregaron las cards de las tareas realizadas hardcodeadas en bootstrap mientras se le implementan las funcionalidades en js 
+Tarea 6 - Eliminar tareas
 
-Sprint 3 -- finalizado
-se le implemento al formulario la  validacion de los datos correspondientes 
+Se implementó:
 
----
+deleteTask(taskId)
 
-## 👨‍💻 Autor
+El botón eliminar identifica cada tarea mediante data-task-id.
 
-**César Restrepo**
+El flujo es:
 
-Desarrollador Full Stack Java-Junior.
+Eliminar → deleteTask() → save() → render()
 
-- HTML
-- CSS
-- Bootstrap
-- JavaScript
-- Java
-- Spring Boot
-- Node.js
-- React
+💾 LocalStorage
 
+Se implementaron:
 
-## 🎨 Diseño de la interfaz
+save()
+load()
 
-Antes del desarrollo se realizó un wireframe de la aplicación en **Figma**, definiendo la estructura de la interfaz, la distribución de los componentes y la experiencia del usuario.
+para guardar y recuperar las tareas utilizando localStorage.
 
-### Diseño realizado en Figma
+✅ Validación
 
-- Wireframe de la pantalla principal.
-- Formulario para registrar tareas.
-- Área para visualizar las tareas.
-- Organización de los componentes de la interfaz.
+Se agregaron validaciones al formulario para evitar registrar tareas con información incompleta.
 
-**Enlace al diseño:**
+🧪 Pruebas
 
-👉 https://www.figma.com/proto/1P9DkxSDv3NDvIDWLOsFwi/GNproyecto_Individual?node-id=0-1&t=pSOBj42dacuy9iau-1
+Crear tareas.
 
----
+Mostrar tareas dinámicamente.
 
-## 📋 Gestión del proyecto
+Validar formulario.
 
-La planificación y seguimiento del desarrollo se realizó mediante **Trello**, utilizando la metodología Scrum.
+Marcar tareas como completadas.
 
-### Organización del tablero
+Eliminar tareas.
 
-- Product Backlog
-- Sprint Backlog
-- Pendiente
-- En Proceso
-- Completado
+Guardar y recuperar tareas con localStorage.
 
-Las historias de usuario y tareas fueron organizadas por prioridad para facilitar el desarrollo del Sprint 1.
+Diseño responsive.
+
+🔮 Próximas funcionalidades
+
+Editar tareas.
+
+Buscar y filtrar tareas.
+
+Persistir el cambio de estado.
+
+Sistema de usuarios y autenticación.
+
+API REST.
+
+Backend con Java y Spring Boot.
+
+PostgreSQL.
+
+Docker.
+
+🔗 Recursos
 
 **Enlace al tablero:**
 
@@ -156,3 +166,19 @@ Las historias de usuario y tareas fueron organizadas por prioridad para facilita
 - 📋 **Gestión del proyecto:** [Trello](https://trello.com/invite/b/6a6ba63d04de471e6edc3522/ATTId85357b2819d251bb842b2f6a8e31d4aA70F83A7/gnproyectoindividual)
 - 💻 **Repositorio:** [GitHub](https://github.com/carc0813/GNProyecto_Individual.git)
 - 🌐 **Demo:** [GitHub Pages](https://carc0813.github.io/GNProyecto_Individual/)
+
+
+
+📚 Aprendizajes
+
+Durante el proyecto se fortalecieron conocimientos en HTML, CSS, Bootstrap, JavaScript, DOM, eventos, arrays, objetos, clases, LocalStorage, JSON, Git y GitHub.
+
+👨‍💻 Autor
+
+César Restrepo
+
+Proyecto desarrollado como parte del proceso de formación en desarrollo Full Stack.
+
+📌 Estado
+
+🚧 Proyecto en desarrollo
