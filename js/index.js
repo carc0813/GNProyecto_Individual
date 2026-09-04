@@ -218,99 +218,34 @@ listaTareas.addEventListener("click", function (event) {
         return;
     }
 
-
     // =====================================
-    // COMPLETAR TAREA
+    // MARCAR TAREA COMO HECHA
     // =====================================
 
     if (
-        event.target.classList.contains("btn-completar")
+        event.target.classList.contains("done-button")
     ) {
 
-        const tarjeta =
+        const parentTask =
             event.target.closest(".tarea-card");
 
 
-        const estado =
-            tarjeta.querySelector(".estado-tarea");
+        const taskId =
+            Number(parentTask.dataset.taskId);
 
 
-        const boton =
-            event.target;
+        const task =
+            taskManager.getTaskById(taskId);
 
 
-        if (
-            estado.textContent.trim() === "porhacer"
-        ) {
-
-            estado.textContent =
-                "Completada";
+        task.status = "DONE";
 
 
-            estado.classList.remove(
-                "bg-warning",
-                "text-dark"
-            );
+        taskManager.save();
 
 
-            estado.classList.add(
-                "bg-success"
-            );
-
-
-            tarjeta.classList.add(
-                "border-success"
-            );
-
-
-            boton.textContent =
-                "Marcar porhacer";
-
-
-            boton.classList.remove(
-                "btn-success"
-            );
-
-
-            boton.classList.add(
-                "btn-secondary"
-            );
-
-        } else {
-
-            estado.textContent =
-                "porhacer";
-
-
-            estado.classList.remove(
-                "bg-success"
-            );
-
-
-            estado.classList.add(
-                "bg-warning",
-                "text-dark"
-            );
-
-
-            tarjeta.classList.remove(
-                "border-success"
-            );
-
-
-            boton.textContent =
-                "Completar";
-
-
-            boton.classList.remove(
-                "btn-secondary"
-            );
-
-
-            boton.classList.add(
-                "btn-success"
-            );
-        }
+        taskManager.render();
     }
+  
 
 });

@@ -1,0 +1,798 @@
+/* =====================================
+   VARIABLES
+===================================== */
+
+:root {
+    --azul-oscuro: #172554;
+    --azul: #2563EB;
+    --azul-hover: #1D4ED8;
+    --azul-claro: #EFF6FF;
+    --celeste: #38BDF8;
+
+    --verde: #16A34A;
+    --verde-hover: #15803D;
+
+    --naranja: #F59E0B;
+    --naranja-hover: #D97706;
+
+    --rojo: #DC2626;
+    --rojo-hover: #B91C1C;
+
+    --fondo: #F8FAFC;
+    --blanco: #FFFFFF;
+
+    --texto: #1E293B;
+    --texto-secundario: #64748B;
+
+    --borde: #E2E8F0;
+}
+
+
+/* =====================================
+   GENERAL
+===================================== */
+
+body {
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    background: var(--fondo);
+
+    color: var(--texto);
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar-custom {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-oscuro),
+            #1E40AF
+        );
+
+    padding: 15px 0;
+
+    box-shadow:
+        0 4px 15px
+        rgba(23, 37, 84, 0.20);
+}
+
+
+.navbar-brand {
+
+    color: white !important;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+}
+
+
+.navbar-brand i {
+
+    color: var(--celeste);
+
+    margin-right: 8px;
+}
+
+
+.author-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 0.85rem;
+}
+
+
+.author-info span {
+
+    color: #CBD5E1;
+}
+
+
+.author-info strong {
+
+    color: #BAE6FD;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #172554 0%,
+            #1E40AF 55%,
+            #2563EB 100%
+        );
+
+    color: white;
+
+    padding:
+        60px 0
+        70px;
+}
+
+
+.hero-content {
+
+    max-width: 720px;
+}
+
+
+.badge-project {
+
+    display: inline-block;
+
+    padding:
+        7px 14px;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.20);
+
+    color:
+        #DBEAFE;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.4px;
+}
+
+
+.hero-section h1 {
+
+    font-size:
+        3.2rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.1;
+
+    margin-bottom:
+        16px;
+}
+
+
+.hero-section h1 span {
+
+    color:
+        #7DD3FC;
+}
+
+
+.hero-section p {
+
+    max-width:
+        620px;
+
+    color:
+        #DBEAFE;
+
+    font-size:
+        1.08rem;
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        25px;
+}
+
+
+/* =====================================
+   TECNOLOGÍAS
+===================================== */
+
+.tech-badges {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+}
+
+
+.tech-badges span {
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    color:
+        #E0F2FE;
+
+    font-size:
+        0.77rem;
+
+    font-weight:
+        600;
+}
+
+
+/* =====================================
+   CONTENIDO
+===================================== */
+
+.main-container {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    margin-top:
+        -35px;
+
+    margin-bottom:
+        60px;
+}
+
+
+/* =====================================
+   CARDS PRINCIPALES
+===================================== */
+
+.task-form-card,
+.task-list-card {
+
+    border:
+        none;
+
+    border-radius:
+        15px;
+
+    background:
+        var(--blanco);
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+/* =====================================
+   CABECERA
+===================================== */
+
+.card-header-custom {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        18px 22px;
+
+    background:
+        var(--blanco);
+
+    border-bottom:
+        1px solid
+        var(--borde);
+
+    color:
+        var(--azul-oscuro);
+
+    font-weight:
+        700;
+}
+
+
+.card-header-custom i {
+
+    color:
+        var(--azul);
+
+    margin-right:
+        8px;
+}
+
+
+.task-label {
+
+    background:
+        var(--azul-claro);
+
+    color:
+        var(--azul);
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        700;
+}
+
+
+/* =====================================
+   FORMULARIO
+===================================== */
+
+.form-label {
+
+    color:
+        var(--texto);
+
+    font-size:
+        0.88rem;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        7px;
+}
+
+
+.form-control,
+.form-select {
+
+    background:
+        #F8FAFC;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius:
+        9px;
+
+    padding:
+        11px 13px;
+
+    color:
+        var(--texto);
+}
+
+
+.form-control::placeholder {
+
+    color:
+        #94A3B8;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+
+    background:
+        white;
+
+    border-color:
+        var(--azul);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.12);
+}
+
+
+/* =====================================
+   ESPACIADO DEL FORMULARIO
+===================================== */
+
+.task-form-card .mb-3,
+.task-form-card .mb-4 {
+
+    margin-bottom:
+        18px !important;
+}
+
+
+.task-form-card textarea {
+
+    min-height:
+        110px;
+
+    resize:
+        vertical;
+}
+
+
+/* =====================================
+   BOTÓN AGREGAR
+===================================== */
+
+.btn-primary-custom {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--azul-hover)
+        );
+
+    border:
+        none !important;
+
+    border-radius:
+        9px !important;
+
+    color:
+        white !important;
+
+    padding:
+        11px;
+
+    font-weight:
+        700;
+
+    transition:
+        0.2s ease;
+}
+
+
+.btn-primary-custom:hover {
+
+    background:
+        var(--azul-hover);
+
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =====================================
+   TARJETAS DE TAREAS
+===================================== */
+
+.tarea-card {
+
+    background:
+        white;
+
+    border:
+        1px solid
+        var(--borde) !important;
+
+    border-radius:
+        12px !important;
+
+    margin-bottom:
+        15px !important;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+.tarea-card:hover {
+
+    border-color:
+        #BFDBFE !important;
+
+    box-shadow:
+        0 7px 20px
+        rgba(15, 23, 42, 0.07);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.tarea-card .card-title {
+
+    color:
+        var(--azul-oscuro);
+
+    font-size:
+        1.05rem;
+
+    font-weight:
+        700;
+}
+
+
+.tarea-card .card-text {
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        0.9rem;
+}
+
+
+.tarea-card p {
+
+    color:
+        #475569;
+
+    font-size:
+        0.88rem;
+}
+
+
+.tarea-card strong {
+
+    color:
+        var(--texto);
+}
+
+
+/* =====================================
+   ESTADO
+===================================== */
+
+.estado-tarea {
+
+    border-radius:
+        20px;
+
+    padding:
+        6px 11px;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        700;
+}
+
+
+/* =====================================
+   BOTONES DE LAS TARJETAS
+===================================== */
+
+.tarea-card button {
+
+    border:
+        none !important;
+
+    border-radius:
+        7px !important;
+
+    padding:
+        7px 13px;
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        600;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+/* =====================================
+   MARK AS DONE
+===================================== */
+
+.tarea-card .done-button {
+
+    background:
+        var(--verde) !important;
+
+    color:
+        white !important;
+}
+
+
+.tarea-card .done-button:hover {
+
+    background:
+        var(--verde-hover) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================
+   EDITAR
+===================================== */
+
+.tarea-card .btn-warning {
+
+    background:
+        var(--naranja) !important;
+
+    color:
+        white !important;
+}
+
+
+.tarea-card .btn-warning:hover {
+
+    background:
+        var(--naranja-hover) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================
+   ELIMINAR
+===================================== */
+
+.tarea-card .delete-button {
+
+    background:
+        var(--rojo) !important;
+
+    color:
+        white !important;
+}
+
+
+.tarea-card .delete-button:hover {
+
+    background:
+        var(--rojo-hover) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================
+   MENSAJES
+===================================== */
+
+.alert {
+
+    border-radius:
+        9px;
+
+    font-size:
+        0.85rem;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer-custom {
+
+    background:
+        var(--azul-oscuro);
+
+    color:
+        white;
+
+    padding:
+        40px 0;
+}
+
+
+.footer-logo {
+
+    color:
+        white;
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        8px;
+}
+
+
+.footer-logo i {
+
+    color:
+        var(--celeste);
+
+    margin-right:
+        7px;
+}
+
+
+.footer-custom p {
+
+    color:
+        #CBD5E1;
+
+    margin-bottom:
+        18px;
+}
+
+
+.footer-line {
+
+    height:
+        1px;
+
+    max-width:
+        450px;
+
+    margin:
+        0 auto 18px;
+
+    background:
+        #334155;
+}
+
+
+.footer-custom small {
+
+    color:
+        #94A3B8;
+}
+
+
+.footer-custom strong {
+
+    color:
+        #7DD3FC;
+}

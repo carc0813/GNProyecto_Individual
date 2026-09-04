@@ -22,8 +22,10 @@ class TaskManager {
       
         this.save();
         this.render();
+    console.log(taskManager.tasks);
 
   } 
+  
 
       // =====================================
     // ELIMINAR TAREA
@@ -56,24 +58,6 @@ class TaskManager {
         );
     }
 
-
-    // =====================================
-    // CARGAR
-    // =====================================
-
-
-    save() {
-
-        localStorage.setItem(
-            "tasks",
-            JSON.stringify(this.tasks)
-        );
-
-        localStorage.setItem(
-            "currentId",
-            this.currentId
-        );
-    }
 
  // =====================================
     // CARGAR
@@ -140,11 +124,11 @@ class TaskManager {
                     </p>
 
 
-                    <button
-                        class="btn btn-success btn-sm btn-completar"
-                    >
-                        Completar
-                    </button>
+                   <button 
+    class="done-button btn btn-success btn-sm"
+>
+    Mark As Done
+</button>
 
 
                     <button
@@ -189,6 +173,21 @@ class TaskManager {
                 this.createTaskHtml(task);
         }
     }
+
+
+    getTaskById(taskId) {
+
+    let foundTask;
+
+    for (let task of this.tasks) {
+
+        if (task.id === taskId) {
+            foundTask = task;
+        }
+    }
+
+    return foundTask;
+}
 }
 
   
