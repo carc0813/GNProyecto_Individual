@@ -2,7 +2,7 @@ class TaskManager {
   constructor(currentId = 0) {
     this.tasks = [];
     this.currentId = currentId;
-    this.load();
+   
   }
 
 
@@ -47,15 +47,19 @@ class TaskManager {
     // =====================================
      save() {
 
-        localStorage.setItem(
-            "tasks",
-            JSON.stringify(this.tasks)
-        );
+        const tasksJson = JSON.stringify(this.tasks);
 
-        localStorage.setItem(
-            "currentId",
-            this.currentId
-        );
+    localStorage.setItem(
+        "tasks",
+        tasksJson
+    );
+
+    const currentId = String(this.currentId);
+
+    localStorage.setItem(
+        "currentId",
+        currentId
+    );
     }
 
 
@@ -84,7 +88,7 @@ class TaskManager {
         }
 
 
-        this.render();
+    
     }
 
 

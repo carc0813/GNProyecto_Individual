@@ -1,8 +1,11 @@
 const formulario = document.getElementById("formTarea");
 
+
+
 const taskManager = new TaskManager();
 
-
+taskManager.load();
+taskManager.render();
 // =====================================
 // FORMULARIO
 // =====================================
@@ -41,8 +44,11 @@ formulario.addEventListener("submit", function (event) {
             status
         );
 
-
-        console.log(taskManager.tasks);
+       
+        // Guardar en LocalStorage
+      taskManager.save();
+        // Actualizar pantalla
+      taskManager.render();
 
 
         formulario.reset();
