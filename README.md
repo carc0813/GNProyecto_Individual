@@ -166,7 +166,7 @@ Docker.
 - 📋 **Gestión del proyecto:** [Trello](https://trello.com/invite/b/6a6ba63d04de471e6edc3522/ATTId85357b2819d251bb842b2f6a8e31d4aA70F83A7/gnproyectoindividual)
 - 💻 **Repositorio:** [GitHub](https://github.com/carc0813/GNProyecto_Individual.git)
 - 🌐 **Demo:** [GitHub Pages](https://carc0813.github.io/GNProyecto_Individual/)
-
+⚙️ Backend: GNBackend_ProyectoIndividual — GitHub
 
 
 📚 Aprendizajes
